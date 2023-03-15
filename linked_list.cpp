@@ -41,7 +41,6 @@ bool LinkedList<ItemType>::insert(int position, const ItemType& new_item) {
                 temporary_pointer = temporary_pointer->get_next_node();
             }
             new_node->set_next_node(temporary_pointer->get_next_node());
-            
             temporary_pointer->set_next_node(new_node);
             count++;
             return true;
@@ -71,4 +70,30 @@ ItemType LinkedList<ItemType>::replace(int position, const ItemType& new_item) {
     ItemType replaced = temporary_pointer->get_item();
     temporary_pointer->set_item(new_item);
     return replaced;
+}
+
+template <class ItemType>
+bool LinkedList<ItemType>::remove(int position) {
+    Node<ItemType> * temporary_temporary_pointer;
+    temporary_pointer = head;
+    if (position == 0 || position > count) {
+        return false;
+    }
+    else if (position == 1) {
+        temporary_pointer = head;
+        head = head->get_next_node();
+        delete temporary_pointer;
+        count--;
+        return true;
+    }
+    else {
+        for (int i = 1; i < position-1; i++) {
+            temporary_pointer = temporary_pointer->get_next_node();
+        }
+        temporary_temporary_pointer = temporary_pointer->get_next_node();
+        temporary_pointer->set_next_node(temporary_temporary_pointer->get_next_node());
+        delete temporary_temporary_pointer;
+        count--;
+        return true;
+    }
 }

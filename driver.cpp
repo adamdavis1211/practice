@@ -9,13 +9,19 @@ int main() {
     monkey_nigger.insert(4, "4");
     monkey_nigger.insert(5, "5");
 
-    for (int i = 1; i <= 5; i++) {
-        cout << monkey_nigger.get_entry(i) << endl;
-    }
-    cout << endl;
     monkey_nigger.remove(5);
-
     monkey_nigger.print_all();   
+
+    cout << endl;
+
+    monkey_nigger.remove(3);
+    monkey_nigger.print_all();
+
+    cout << endl;
+
+    monkey_nigger.remove(2);
+    monkey_nigger.print_all();
+
 
     LinkedList<string> linked;
     linked.insert(1, "one");
@@ -31,7 +37,7 @@ int main() {
 
     cout << linked.get_entry(1) << endl;
     cout << linked.get_entry(2) << endl;
-    cout << linked.get_entry(3) << endl;
+    cout << linked.get_entry(3) << endl << endl;
 
     linked.replace(1, "one or two maybe tree fiddy");
     linked.replace(2, "two, yea two");
@@ -41,5 +47,22 @@ int main() {
     cout << linked.get_entry(2) << endl;
     cout << linked.get_entry(3) << endl;
     cout << linked.get_entry(4) << endl;
-    cout << linked.get_entry(5) << endl;    
+    cout << linked.get_entry(5) << endl << endl;    
+
+    linked.remove(3);
+
+    cout << linked.get_entry(1) << endl;
+    cout << linked.get_entry(2) << endl;
+    cout << linked.get_entry(3) << endl;
+    cout << linked.get_entry(4) << endl;
+    cout << linked.get_entry(5) << endl << endl;   
+
+    linked.remove(4);
+
+    cout << linked.get_entry(1) << endl;
+    cout << linked.get_entry(2) << endl;
+    cout << linked.get_entry(3) << endl;
+    cout << linked.get_entry(4) << endl;
+    cout << linked.get_entry(5) << endl;   
+
 }   
